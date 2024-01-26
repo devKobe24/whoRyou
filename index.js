@@ -21,6 +21,8 @@ const io = new Server(httpServer, {
   console.log("Server is open, access by",process.env.AccessErick);
 });// httpServer를 올린다.
 
+require("./utils/io")(io); // uitils의 함수 매개변수 io를 넘겨주는 코드
+
 // httpServer 틀어놔야함.
 httpServer.listen(process.env.PORT, () =>{
   console.log("server listening on port",process.env.PORT);
