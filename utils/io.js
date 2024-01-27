@@ -8,5 +8,9 @@ module.exports = function (io) {
 
   io.on("connection", async(socket) => { // 연결된 것을 socket이라고 부른다, 연결된 사람의 정보를 매개변수로 보내줌(socket)
     console.log("client is connected", socket.id);
+
+		socket.on("disconnect", () => {
+			console.log("user is disconnected")
+		}); // 소켓 연결이 끊긴 상황을 듣는다.
   });
 };
