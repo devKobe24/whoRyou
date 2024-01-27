@@ -12,9 +12,11 @@ mongoose.connect("DB ADDRESS가 들어가면 됨", { 옵션 })
 */ 
 
 // DB 주소 같은 경우, 중요한 변수이므로 따로 .env에 저장하여 관리함.
-mongoose.connect(process.env.DB, {
-  // useNewUrlParser: true,
-  // useUnifiedTopology: true,
-}).then(()=>console.log("connected to database!!!!!"));
+mongoose
+  .connect(process.env.DB, {
+    // useNewUrlParser: true,
+    // useUnifiedTopology: true,
+  })
+  .then(()=>console.log("connected to database!!!!!"));
 
 module.exports = app;

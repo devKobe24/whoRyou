@@ -15,10 +15,10 @@ require("dotenv").config(); // .env를 사용하므로 이 코드가 필요함.
 const httpServer = createServer(app); // DB 연결부분을 올린다.
 const io = new Server(httpServer, {
   cors: {
-    origin:process.env.AccessErick // 접속을 허가할 호스트
+    origin:"http://localhost:3000"// 접속을 허가할 호스트
   },
 }, () =>{
-  console.log("Server is open, access by",process.env.AccessErick);
+  console.log("Server is open");
 });// httpServer를 올린다.
 
 require("./utils/io")(io); // uitils의 함수 매개변수 io를 넘겨주는 코드
