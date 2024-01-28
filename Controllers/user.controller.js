@@ -20,4 +20,13 @@ userController.saveUser = async(userName, socketId) => {
   return user;
 };
 
+// 유저 찾기 함수 생성.
+userController.checkUser = async (socketId) => {
+  const user = await User.findOne({ token: socketId });
+	
+	if(!user) throw new Error("User not found");
+
+	return user;
+};
+
 module.exports = userController;
